@@ -24,7 +24,6 @@ public class FrontControllerServletV1 extends HttpServlet {
         controllerMap.put("/front-controller/v1/members/new-form", new MemberFormControllerV1()); // 요청 url마다 실행할 컨트롤러를 세팅
         controllerMap.put("/front-controller/v1/members/save", new MemberSaveControllerV1());
         controllerMap.put("/front-controller/v1/members", new MemberListControllerV1());
-
     }
 
     @Override
