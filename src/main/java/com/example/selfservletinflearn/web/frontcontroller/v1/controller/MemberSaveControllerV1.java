@@ -20,7 +20,7 @@ public class MemberSaveControllerV1 implements ControllerV1 {
         Member member = new Member(username, age);
         memberRepository.save(member);
         request.setAttribute("member", member);
-        String viewPath = "/webapp/WEB-INF/views/save-result.jsp";
+        String viewPath = "/WEB-INF/views/save-result.jsp"; // todo: 이 경로에 webapp 추가하면 뷰 매핑이 안되는데, 이유가 무엇이었을까? 하위매핑?
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
         dispatcher.forward(request, response);
     }
