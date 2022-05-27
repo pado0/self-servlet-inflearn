@@ -13,7 +13,7 @@ public class MemberFormControllerV1 implements ControllerV1 {
     // 기존 서블릿과 동일
     @Override
     public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String viewPath = "/webapp/WEB-INF/views/new-form.jsp";
+        String viewPath = "/WEB-INF/views/new-form.jsp";
         System.out.println("viewPath = " + viewPath);
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
         dispatcher.forward(request, response);

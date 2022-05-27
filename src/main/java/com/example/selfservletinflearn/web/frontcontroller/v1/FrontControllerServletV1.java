@@ -31,7 +31,9 @@ public class FrontControllerServletV1 extends HttpServlet {
 
         String requestURI = request.getRequestURI();
 
-        ControllerV1 controller = controllerMap.get(requestURI);
+        // 매핑정보를 보고 url에 맞는 컨트롤러를 호출. 다형성 사용 컨트롤러 구현체
+        ControllerV1 controller = controllerMap.get(requestURI); // 다형성 쓰기
+        //System.out.println("controller = " + controller.toString());
         if (controller == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
