@@ -13,18 +13,17 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-// v1 하위의 어떤 Url이 들어와도 일단 이 컨트롤러 서블릿 호출
+// *로 경로지정: v1 하위의 어떤 Url이 들어와도 일단 이 컨트롤러 서블릿 호출
 @WebServlet(name = "frontControllerServletV1", urlPatterns = "/front-controller/v1/*")
 public class FrontControllerServletV1 extends HttpServlet {
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
 
+    // 매핑정보
     public FrontControllerServletV1() {
         controllerMap.put("/front-controller/v1/members/new-form", new MemberFormControllerV1());
         controllerMap.put("/front-controller/v1/members/save", new MemberSaveControllerV1());
         controllerMap.put("/front-controller/v1/members", new MemberListControllerV1());
     }
-
-    // 매핑정보
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("FrontControllerServletV1.service");

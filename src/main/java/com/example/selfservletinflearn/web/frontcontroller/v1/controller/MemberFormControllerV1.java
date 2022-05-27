@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 // 서블릿 아니어도 된다.
+// 컨트롤러는 매핑정보 확인해서 jsp로 포워드만.
 public class MemberFormControllerV1 implements ControllerV1 {
     // 기존 서블릿과 동일
     @Override
