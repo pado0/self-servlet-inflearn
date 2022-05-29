@@ -49,7 +49,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         // 얘가 너무 디테일한 로직임. 별도 메서드로 뽑는게 좋다.
         // paramMap을 넘겨줘야함
         Map<String, String> paramMap = createParamMap(request);
-        ModelView mv = controller.process(paramMap);
+        ModelView mv = controller.process(paramMap); // 요청으로 들어온 데이터를 뜯어
 
         // 뷰 리졸버로 4.논리 이름을 물리 이름으로 변환 (별도 메서드)
         String viewName = mv.getViewName(); // 여기서 컨트롤러 호출시 논리이름 new-form이 반환
